@@ -1,5 +1,4 @@
 extends KinematicBody
-export var SPEED = 10
 var mouse_sens = 0.3
 var camera_anglev=0
 
@@ -12,12 +11,6 @@ func _input(event):
 			camera_anglev+=changev
 			$Camera.rotate_x(deg2rad(changev))
 
-
 func _process(delta):
-	var velocity = Vector3.ZERO
-	if Input.is_action_pressed("forward"): velocity -= transform.basis.z * SPEED
-	if Input.is_action_pressed("backward"): velocity += transform.basis.z * SPEED
-	if Input.is_action_pressed("right"): velocity += transform.basis.x * SPEED
-	if Input.is_action_pressed("left"): velocity -= transform.basis.x * SPEED
-	move_and_slide(velocity, Vector3.UP)
-	
+	var col=$Camera/RayCast.get_collider()
+	if col != null and col.name == "Bed": print("Bed")

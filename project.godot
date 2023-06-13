@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="The 1 Year Jam"
-run/main_scene="res://TestScene.tscn"
+run/main_scene="res://TestScene3D.tscn"
 config/icon="res://icon.png"
 
 [gui]

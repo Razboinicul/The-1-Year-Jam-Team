@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://RoomPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Bedroom.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15579, -5.96175 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="Bedroom" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="Walls" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls"]
+transform = Transform( 5.83229, 0, 0, 0, 5.15243, 0, 0, 0, 0.456858, 0, 1.88556, 0.83225 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Walls"]
+transform = Transform( 0.416906, 0, 0, 0, 4.16566, 0, 0, 0, 5.03033, 5.07768, 2.5054, 5.58141 )
+shape = SubResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.82215, 0.832 )
+width = 14.0794
+height = 6.25764
+
+[node name="CSGBox2" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52435, 3.40686, 5.11158 )
+height = 4.87088
+depth = 7.28611
+
+[node name="CSGBox3" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320934, 5.86392, 4.70366 )
+width = 11.4747
+height = 0.498958
+depth = 6.78753
+
+[node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.397827, 1.82552, 2.51637 )
