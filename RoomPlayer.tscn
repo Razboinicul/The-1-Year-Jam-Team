@@ -12,3 +12,67 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01166, 0 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, -10, 0 )
+
+[node name="UI" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+
+[node name="BedLabel" type="Label" parent="UI"]
+visible = false
+modulate = Color( 0.254902, 0.254902, 0.254902, 1 )
+margin_top = 460.0
+margin_right = 512.0
+margin_bottom = 530.0
+rect_scale = Vector2( 2, 2 )
+text = "Press „e” to Sleep"
+align = 1
+valign = 1
+
+[node name="PhoneLabel" type="Label" parent="UI"]
+visible = false
+modulate = Color( 0.254902, 0.254902, 0.254902, 1 )
+margin_top = 460.0
+margin_right = 512.0
+margin_bottom = 530.0
+rect_scale = Vector2( 2, 2 )
+text = "Press „e” to Watch WeTube Shorts"
+align = 1
+valign = 1
+
+[node name="LaptopLabel" type="Label" parent="UI"]
+visible = false
+modulate = Color( 0.254902, 0.254902, 0.254902, 1 )
+margin_top = 460.0
+margin_right = 512.0
+margin_bottom = 530.0
+rect_scale = Vector2( 2, 2 )
+text = "Press „e” to Surf the Web"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.0
+margin_top = -5.0
+margin_right = 36.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.25, 0.25 )
+color = Color( 0, 0, 0, 1 )

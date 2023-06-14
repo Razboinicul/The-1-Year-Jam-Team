@@ -13,4 +13,22 @@ func _input(event):
 
 func _process(delta):
 	var col=$Camera/RayCast.get_collider()
-	if col != null and col.name == "Bed": print("Bed")
+	if col != null and col.name == "Bed": 
+		$UI/BedLabel.show()
+		if Input.is_action_pressed("Interact"):
+			goto("res://TestScene.tscn")
+	else: $UI/BedLabel.hide()
+	if col != null and col.name == "Phone": 
+		$UI/PhoneLabel.show()
+		if Input.is_action_pressed("Interact"):
+			goto("res://TestScene.tscn")
+	else: $UI/PhoneLabel.hide()
+	if col != null and col.name == "Laptop": 
+		$UI/LaptopLabel.show()
+		if Input.is_action_pressed("Interact"):
+			goto("res://TestScene.tscn")
+	else: $UI/LaptopLabel.hide()
+
+func goto(scene: String):
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene(scene)

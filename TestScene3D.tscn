@@ -50,3 +50,6 @@ depth = 6.78753
 
 [node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.397827, 1.82552, 2.51637 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 0, 5.8343, 4.99678 )
