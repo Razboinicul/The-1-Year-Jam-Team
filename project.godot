@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Interpreter",
+"language": "GDScript",
+"path": "res://Interpreter.gd"
+} ]
+_global_script_class_icons={
+"Interpreter": ""
+}
+
 [application]
 
 config/name="The 1 Year Jam"
