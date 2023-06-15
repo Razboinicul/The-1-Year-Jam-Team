@@ -40,7 +40,7 @@ margin_top = 460.0
 margin_right = 512.0
 margin_bottom = 530.0
 rect_scale = Vector2( 2, 2 )
-text = "Press „e” to Watch WeTube Shorts"
+text = "Press „e” to Use Phone"
 align = 1
 valign = 1
 
@@ -51,7 +51,7 @@ margin_top = 460.0
 margin_right = 512.0
 margin_bottom = 530.0
 rect_scale = Vector2( 2, 2 )
-text = "Press „e” to Surf the Web"
+text = "Press „e” to Use Computer"
 align = 1
 valign = 1
 

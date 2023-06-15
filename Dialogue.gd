@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 export var CharacterName: String
 export var Text: String
