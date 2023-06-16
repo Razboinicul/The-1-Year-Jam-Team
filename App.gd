@@ -6,4 +6,6 @@ func _on_Button_pressed(): get_tree().change_scene("res://OS.tscn")
 func _ready(): 
 	var i = Interpreter.new()
 	i.obj = self
+	i.title_bar = $Bar/HBoxContainer/Label
+	i.app_control = $Control
 	i.run()
