@@ -75,7 +75,7 @@ func run_instruction(i):
 	elif cmd == "title":
 		var text = """"""
 		for i in args: text += check_var(i.replace("var:", ""))+" "
-		title_bar.text = text
+		if title_bar != null: title_bar.text = text
 	else:
 		bsod("Command '"+cmd+"' does not exist")
 
