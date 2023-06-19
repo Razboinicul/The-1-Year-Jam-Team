@@ -13,8 +13,8 @@ var vars = {}
 
 func run():
 	_script = _script.split("\n")
-	for i in len(_script):
-		run_instruction(i)
+	for l in len(_script):
+		run_instruction(l)
 
 func run_instruction(i):
 	var cmd = _script[i].split(" ")[0]
