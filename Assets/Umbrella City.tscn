@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/umbrella_city.glb" type="PackedScene" id=2]
+[ext_resource path="res://TestSprite.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1 )
@@ -60,7 +61,10 @@ points = PoolVector3Array( -1.67293, 0.531268, -0.134521, -1.67293, 0.531268, 0.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0483334, 1.19927, -22.6112 )
 SPEED = 4
 
-[node name="Node" type="Node" parent="." index="18"]
+[node name="TestSprite" parent="." index="18" instance=ExtResource( 3 )]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 1.73532, 0 )
+
+[node name="Node" type="Node" parent="." index="19"]
 
 [node name="CollisionShape16" type="CollisionShape" parent="Node" index="0"]
 transform = Transform( 48.5523, 0, 0, 0, 48.5523, 0, 0, 0, 48.5523, 0, 0.0338425, 0 )
