@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://PhoneOS.gd" type="Script" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
 
 [node name="PhoneOS" type="Control"]
 anchor_left = 0.5
@@ -13,6 +16,14 @@ margin_right = 200.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 400, 0 )
 script = ExtResource( 1 )
+
+[node name="Shutdown" type="Button" parent="."]
+margin_left = 343.0
+margin_top = -11.0
+margin_right = 417.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.75, 0.75 )
+text = "Shutdown"
 
 [node name="Wallpaper" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -49,6 +60,9 @@ valign = 1
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color( 0, 0.0392157, 1, 1 )
+self_modulate = Color( 0, 0.0392157, 1, 1 )
+light_mask = 1023
+material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -200.0
@@ -59,4 +73,5 @@ text = "Safe Mode Enabled"
 align = 1
 valign = 1
 
+[connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]
 [connection signal="pressed" from="Apps/Button" to="." method="_on_Button_pressed"]
