@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdo6fsk4xkha3"]
+
+[ext_resource type="Script" path="res://Scripts/Helpers/Interactable.gd" id="1_vkgpi"]
+
+[node name="Interactable" type="StaticBody3D"]
+script = ExtResource("1_vkgpi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
