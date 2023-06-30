@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6xddb5ap3qox"]
 
-[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="1_6o1ud"]
+[ext_resource type="Script" path="res://Scripts/Player/Dialogue.gd" id="1_v6a1x"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("1_6o1ud")
+script = ExtResource("1_v6a1x")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

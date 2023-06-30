@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://sev56hgsouhh"]
+[gd_scene load_steps=54 format=3 uid="uid://sev56hgsouhh"]
 
 [ext_resource type="Texture2D" uid="uid://dm8sjgojkhh6p" path="res://Assets/Objects/Bedroom_Attempt_1_(1) Floor texture toon shaded.png" id="1_xlyt5"]
 [ext_resource type="Texture2D" uid="uid://dld3we6cl63yg" path="res://Assets/Objects/Bedroom_Attempt_1_(1) Wall texture.png" id="2_cxkel"]
@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://kne3nq74ec6i" path="res://Assets/Objects/Bedroom_Attempt_1_(1) Carpet texture.png" id="3_wb8n1"]
 [ext_resource type="Texture2D" uid="uid://cuj2lc8n6hnec" path="res://Assets/Objects/Bedroom_Attempt_1_room textures.png" id="4_yeqs2"]
 [ext_resource type="PackedScene" uid="uid://bdo6fsk4xkha3" path="res://Scenes/Interactable.tscn" id="5_7yx6w"]
+[ext_resource type="Script" path="res://Scripts/Bedroom/Bed.gd" id="5_r18c0"]
 [ext_resource type="Texture2D" uid="uid://j6764gey22vq" path="res://Assets/Objects/Bedroom_Attempt_1_windows background.png" id="5_vkxw0"]
 [ext_resource type="Texture2D" uid="uid://b1vp5267ybhvj" path="res://Assets/Objects/Bedroom_Attempt_1_phone texture.png" id="6_sn2c8"]
 [ext_resource type="Texture2D" uid="uid://d00ifk1vx8lbm" path="res://Assets/Objects/Bedroom_Attempt_1_NewCanvas11.png" id="7_4ugsn"]
+[ext_resource type="Script" path="res://Scenes/Laptop.gd" id="8_5e5vt"]
 [ext_resource type="Texture2D" uid="uid://5ivg1yyq8pjb" path="res://Assets/Objects/Bedroom_Attempt_1_window.png" id="9_0ebxb"]
+[ext_resource type="Script" path="res://Scenes/Phone.gd" id="10_0ic5p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gh8t"]
 resource_name = "Material.009"
@@ -563,22 +566,23 @@ transform = Transform3D(-2.5279, -1.33708, 0.142343, -0.802023, 1.25604, -2.4448
 [node name="Camera" type="Node3D" parent="."]
 transform = Transform3D(-0.320922, 0.264404, 0.12496, -0.00828198, 0.177232, -0.396277, -0.292329, -0.295288, -0.125956, 13.9831, 11.7432, -17.2285)
 
-[node name="Bed2" type="MeshInstance3D" parent="."]
+[node name="Bed" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.29081, 0, 4.4684e-07, 0, -0.21202, 0, -7.4644e-07, 0, -1.37134, -3.01114, 1.56163, -2.85478)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_0joj3")
 skeleton = NodePath("")
+script = ExtResource("5_r18c0")
 
-[node name="Pillow" type="MeshInstance3D" parent="Bed2"]
+[node name="Pillow" type="MeshInstance3D" parent="Bed"]
 transform = Transform3D(1.99682, 0.493397, 0, -1.16158, 0.848182, 0, 0, 0, 1, 0.804312, -1.84923, -0.0282102)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_oxmtp")
 skeleton = NodePath("")
 
-[node name="Interactable" parent="Bed2" instance=ExtResource("5_7yx6w")]
+[node name="Interactable" parent="Bed" instance=ExtResource("5_7yx6w")]
 interaction_text = "Wanna sleep?"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bed2/Interactable"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bed/Interactable"]
 shape = SubResource("BoxShape3D_seuvk")
 
 [node name="Dresser" type="MeshInstance3D" parent="."]
@@ -598,6 +602,7 @@ transform = Transform3D(0.498171, 0, 0.0724691, 0, 0.0151594, 0, -0.105972, 0, 0
 gi_mode = 0
 mesh = SubResource("ArrayMesh_a66q0")
 skeleton = NodePath("")
+script = ExtResource("8_5e5vt")
 
 [node name="Interactable" parent="Laptop" instance=ExtResource("5_7yx6w")]
 interaction_text = "Coding time?"
@@ -611,6 +616,7 @@ transform = Transform3D(-0.0961563, 0, -0.161183, 0, 0.0150264, 0, 0.287685, 0, 
 gi_mode = 0
 mesh = SubResource("ArrayMesh_fw7oc")
 skeleton = NodePath("")
+script = ExtResource("10_0ic5p")
 
 [node name="Interactable" parent="Phone" instance=ExtResource("5_7yx6w")]
 interaction_text = "Who you gonna call?"
@@ -641,3 +647,7 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_mlvbt")
 }
+
+[connection signal="interacted" from="Bed/Interactable" to="Bed" method="_on_interactable_interacted"]
+[connection signal="interacted" from="Laptop/Interactable" to="Laptop" method="_on_interactable_interacted"]
+[connection signal="interacted" from="Phone/Interactable" to="Phone" method="_on_interactable_interacted"]

@@ -1,7 +1,9 @@
 extends Node
 class_name Interactable
 
+signal interacted(player)
+
 @export var interaction_text : String
 
 func interact(player):
-	player.label.text = "Hell no!"
+	emit_signal("interacted", player)
