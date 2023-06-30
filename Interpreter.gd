@@ -19,15 +19,15 @@ func run():
 func run_instruction(i):
 	var cmd = _script[i].split(" ")[0]
 	var args = _script[i].split(" ")
+	args.remove_at(0)
 	for arg in len(args): args[arg] = args[arg].replace("\n", "")
-	args.remove(0)
 	if cmd == "print":
 		var text = """"""
-		for i in args: 
-			if "var:" in i:
-				text += check_var(i.replace("var:", ""))+" "
+		for _i in args: 
+			if "var:" in _i:
+				text += check_var(_i.replace("var:", ""))+" "
 			else:
-				text += i+" "
+				text += _i+" "
 		print(text)
 	elif cmd == "var":
 		var x
@@ -40,33 +40,33 @@ func run_instruction(i):
 		if type == "label":
 			x = int(args[2])
 			y = int(args[3])
-			a.remove(0)
-			a.remove(0)
+			a.remove_at(0)
+			a.remove_at(0)
 		if type == "rect":
 			x = int(args[2])
 			y = int(args[3])
 			sx = int(args[4])
 			sy = int(args[5])
-			a.remove(0)
-			a.remove(0)
-			a.remove(0)
-			a.remove(0)
-		a.remove(0)
-		a.remove(0)
+			a.remove_at(0)
+			a.remove_at(0)
+			a.remove_at(0)
+			a.remove_at(0)
+		a.remove_at(0)
+		a.remove_at(0)
 		if type == "str":
 			var text = """"""
-			for i in a: text += check_var(i.replace("var:", ""))+" "
+			for _i in a: text += check_var(_i.replace("var:", ""))+" "
 			vars[var_name] = text
 		elif type == "label":
 			var text = """"""
-			for i in a: text += check_var(i.replace("var:", ""))+" "
+			for _i in a: text += check_var(_i.replace("var:", ""))+" "
 			var l = Label.new()
-			l.rect_global_position = Vector2(x, y)
+			l.global_position = Vector2(x, y)
 			l.text = text
 			app_control.add_child(l)
 		elif type == "rect":
 			var rect = ColorRect.new()
-			rect.rect_global_position = Vector2(x, y)
+			rect.global_position = Vector2(x, y)
 			rect.set_size(Vector2(sx, sy))
 			#rect.color = Color.black
 			app_control.add_child(rect)
@@ -74,13 +74,13 @@ func run_instruction(i):
 			bsod("Var type '"+type+"' does not exist")
 	elif cmd == "title":
 		var text = """"""
-		for i in args: text += check_var(i.replace("var:", ""))+" "
-		if title_bar != null: title_bar.text = text
+		for _i in args: text += check_var(_i.replace("var:", ""))+" "
+		title_bar.text = text
 	else:
 		bsod("Command '"+cmd+"' does not exist")
 
 func bsod(reason):
-	var bsod = preload("res://BSOD.tscn").instance()
+	var bsod = preload("res://BSOD.tscn").instantiate()
 	bsod.reason = reason
 	obj.add_child(bsod)
 

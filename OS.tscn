@@ -13,16 +13,16 @@ anchor_bottom = 1.0
 color = Color( 0.027451, 0, 0.87451, 1 )
 
 [node name="Apps" type="Control" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Apps"]
-margin_right = 129.0
-margin_bottom = 40.0
+offset_right = 129.0
+offset_bottom = 40.0
 
 [node name="ExampleApp" type="Button" parent="Apps/VBoxContainer"]
-margin_right = 134.0
-margin_bottom = 20.0
+offset_right = 134.0
+offset_bottom = 20.0
 text = "Example Aplication"
 flat = true
 
@@ -31,18 +31,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -512.0
-margin_top = -600.0
-margin_right = 512.0
+offset_left = -512.0
+offset_top = -600.0
+offset_right = 512.0
 
 [node name="ColorRect" type="ColorRect" parent="Taskbar"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -300.0
-margin_top = -40.0
-margin_right = 300.0
+offset_left = -300.0
+offset_top = -40.0
+offset_right = 300.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Taskbar/ColorRect"]
@@ -50,33 +50,33 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -299.0
-margin_top = -40.0
-margin_right = 303.0
+offset_left = -299.0
+offset_top = -40.0
+offset_right = 303.0
 
 [node name="Button" type="Button" parent="Taskbar/ColorRect/HBoxContainer"]
-margin_right = 74.0
-margin_bottom = 40.0
+offset_right = 74.0
+offset_bottom = 40.0
 text = "Shutdown"
 flat = true
 
 [node name="VSeparator" type="VSeparator" parent="Taskbar/ColorRect/HBoxContainer"]
-margin_left = 78.0
-margin_right = 82.0
-margin_bottom = 40.0
+offset_left = 78.0
+offset_right = 82.0
+offset_bottom = 40.0
 
 [node name="Button2" type="Button" parent="Taskbar/ColorRect/HBoxContainer"]
-margin_left = 86.0
-margin_right = 127.0
-margin_bottom = 40.0
+offset_left = 86.0
+offset_right = 127.0
+offset_bottom = 40.0
 disabled = true
 text = "Web"
 flat = true
 
 [node name="Button3" type="Button" parent="Taskbar/ColorRect/HBoxContainer"]
-margin_left = 131.0
-margin_right = 165.0
-margin_bottom = 40.0
+offset_left = 131.0
+offset_right = 165.0
+offset_bottom = 40.0
 disabled = true
 text = "IDE"
 flat = true

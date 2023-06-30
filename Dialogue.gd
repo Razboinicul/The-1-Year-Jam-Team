@@ -1,7 +1,7 @@
 extends Control
 
-export var CharacterName: String
-export var Text: String
+@export var CharacterName: String
+@export var Text: String
 signal next_pressed
 
 func _ready():
