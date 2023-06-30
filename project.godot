@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="The 1 Year Jam"
-run/main_scene="res://TestScene3D.tscn"
+run/main_scene="res://Scenes/TestScene3D.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://Scripts/global.gd"
 
 [display]
 

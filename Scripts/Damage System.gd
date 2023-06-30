@@ -1,6 +1,6 @@
 extends Control
 signal on_damage_calculated(damage)
-export var damage = 0
+@export var damage = 0
 var div = 1.7
 var run = true
 var body_list = {}

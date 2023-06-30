@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx0f0xvo68c6p"]
+
+[ext_resource type="Script" path="res://Scripts/PhoneOS.gd" id="1"]
+
+[sub_resource type="CanvasItemMaterial" id="1"]
+light_mode = 1
+
+[node name="PhoneOS" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource("1")
+
+[node name="Shutdown" type="Button" parent="."]
+layout_mode = 0
+text = "Shutdown"
+
+[node name="Wallpaper" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.027451, 0, 0.87451, 1)
+
+[node name="Apps" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Button" type="Button" parent="Apps"]
+layout_mode = 2
+text = "Custom Application"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+text = "Time: Error"
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0.0392157, 1, 1)
+self_modulate = Color(0, 0.0392157, 1, 1)
+light_mask = 1023
+material = SubResource("1")
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+text = "Safe Mode Enabled"
+
+[connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]
+[connection signal="pressed" from="Apps/Button" to="." method="_on_Button_pressed"]

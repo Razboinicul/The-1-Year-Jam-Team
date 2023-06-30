@@ -16,12 +16,12 @@ func _process(delta):
 	if col != null and col.name == "Bed": 
 		$UI/BedLabel.show()
 		if Input.is_action_pressed("Interact"):
-			goto("res://TestScene.tscn")
+			goto("res://Scenes/TestScene.tscn")
 	else: $UI/BedLabel.hide()
 	if col != null and col.name == "Phone": 
 		$UI/PhoneLabel.show()
 		if Input.is_action_pressed("Interact"):
-			goto("res://TestScene.tscn")
+			goto("res://Scenes/TestScene.tscn")
 	else: $UI/PhoneLabel.hide()
 	if col != null and col.name == "Laptop": 
 		$UI/LaptopLabel.show()

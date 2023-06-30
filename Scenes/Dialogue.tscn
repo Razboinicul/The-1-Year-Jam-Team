@@ -1,15 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://b6xddb5ap3qox"]
 
-[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="1_6o1ud"]
 
 [node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource("1_6o1ud")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -17,23 +20,26 @@ anchor_bottom = 1.0
 offset_left = -353.5
 offset_top = -160.0
 offset_right = 353.5
-color = Color( 0, 0, 0, 1 )
+color = Color(0, 0, 0, 1)
 
 [node name="CharacterName" type="Label" parent="."]
+layout_mode = 0
 offset_left = -353.0
 offset_top = -155.0
 offset_right = -178.0
 offset_bottom = -130.0
-scale = Vector2( 2, 2 )
+scale = Vector2(2, 2)
 text = "Character Name"
 
 [node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = -349.0
 offset_top = -114.0
 offset_right = 291.0
 offset_bottom = -9.0
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 301.0
 offset_top = -18.0
 offset_right = 351.0

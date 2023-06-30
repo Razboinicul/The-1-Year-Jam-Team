@@ -1,6 +1,6 @@
 extends Control
 
-var dialouge_preload = preload("res://Dialogue.tscn")
+var dialouge_preload = preload("res://Scenes/Dialogue.tscn")
 var run = 0
 func _next_dialouge(): print('dialouge done!!')
 
