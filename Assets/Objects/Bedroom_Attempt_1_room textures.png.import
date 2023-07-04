@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://epppn0h3vihl"
-path.s3tc="res://.godot/imported/Test.png-6e4305d5cf9e3fa11bb4856032eaa225.s3tc.ctex"
+uid="uid://cuj2lc8n6hnec"
+path.s3tc="res://.godot/imported/Bedroom_Attempt_1_room textures.png-8b6f849bb7bdfacf0f0da3f3269d8487.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Test.png"
-dest_files=["res://.godot/imported/Test.png-6e4305d5cf9e3fa11bb4856032eaa225.s3tc.ctex"]
+source_file="res://Assets/Objects/Bedroom_Attempt_1_room textures.png"
+dest_files=["res://.godot/imported/Bedroom_Attempt_1_room textures.png-8b6f849bb7bdfacf0f0da3f3269d8487.s3tc.ctex"]
 
 [params]
 

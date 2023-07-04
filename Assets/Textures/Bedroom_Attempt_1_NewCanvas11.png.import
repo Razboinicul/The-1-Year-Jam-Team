@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcl2vcx8dxd7k"
-path.s3tc="res://.godot/imported/Bedroom_Attempt_1_window.png-fde70697a9952dafc9fa04d865d97001.s3tc.ctex"
+uid="uid://cournl6wf6rja"
+path.s3tc="res://.godot/imported/Bedroom_Attempt_1_NewCanvas11.png-fc57ce6b8e4445324b6c832aa2fd54de.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Bedroom_Attempt_1_window.png"
-dest_files=["res://.godot/imported/Bedroom_Attempt_1_window.png-fde70697a9952dafc9fa04d865d97001.s3tc.ctex"]
+source_file="res://Assets/Textures/Bedroom_Attempt_1_NewCanvas11.png"
+dest_files=["res://.godot/imported/Bedroom_Attempt_1_NewCanvas11.png-fc57ce6b8e4445324b6c832aa2fd54de.s3tc.ctex"]
 
 [params]
 

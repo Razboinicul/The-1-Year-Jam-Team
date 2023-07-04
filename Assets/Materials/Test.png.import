@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvie8foe04hv0"
-path.s3tc="res://.godot/imported/Bedroom_Attempt_1_(1) Floor texture toon shaded.png-acf135dcb670ad5d19b73954e9b0a842.s3tc.ctex"
+uid="uid://epppn0h3vihl"
+path.s3tc="res://.godot/imported/Test.png-bda6d744a786992502b7c6fc0a502868.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Bedroom_Attempt_1_(1) Floor texture toon shaded.png"
-dest_files=["res://.godot/imported/Bedroom_Attempt_1_(1) Floor texture toon shaded.png-acf135dcb670ad5d19b73954e9b0a842.s3tc.ctex"]
+source_file="res://Assets/Materials/Test.png"
+dest_files=["res://.godot/imported/Test.png-bda6d744a786992502b7c6fc0a502868.s3tc.ctex"]
 
 [params]
 

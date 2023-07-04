@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bnu7edvhmm47t"]
 
-[ext_resource type="PackedScene" uid="uid://k4h013mukhtm" path="res://Assets/umbrella_city.glb" id="1_iq653"]
+[ext_resource type="PackedScene" uid="uid://k4h013mukhtm" path="res://Assets/Objects/umbrella_city.glb" id="1_iq653"]
 [ext_resource type="PackedScene" uid="uid://cld7gof32up0s" path="res://Scenes/Player.tscn" id="2_crp1y"]
 
 [sub_resource type="ConvexPolygonShape3D" id="1"]

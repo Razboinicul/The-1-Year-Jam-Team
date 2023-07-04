@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b108hngfkbmq1"
-path="res://.godot/imported/Bedroom_Attempt_1.glb-683eea1d3322a0f4a780315a96cecdce.scn"
+path="res://.godot/imported/Bedroom_Attempt_1.glb-9b909c1a635709ac527c936492cd6761.scn"
 
 [deps]
 
-source_file="res://Assets/Bedroom_Attempt_1.glb"
-dest_files=["res://.godot/imported/Bedroom_Attempt_1.glb-683eea1d3322a0f4a780315a96cecdce.scn"]
+source_file="res://Assets/Objects/Bedroom_Attempt_1.glb"
+dest_files=["res://.godot/imported/Bedroom_Attempt_1.glb-9b909c1a635709ac527c936492cd6761.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://orrwjybcouyw"]
 
-[ext_resource type="Texture2D" uid="uid://epppn0h3vihl" path="res://Assets/Test.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://epppn0h3vihl" path="res://Assets/Materials/Test.png" id="2"]
 
 [node name="TestSprite" type="CharacterBody3D"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
