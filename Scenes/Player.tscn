@@ -1,23 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://cld7gof32up0s"]
+[gd_scene load_steps=9 format=3 uid="uid://c4bp184s38tqc"]
 
-[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_837xu"]
+[ext_resource type="PackedScene" uid="uid://b6xddb5ap3qox" path="res://Scenes/Dialogue.tscn" id="2_o3hlg"]
+[ext_resource type="Script" path="res://Scripts/Player/StateManager.gd" id="3_48j8p"]
+[ext_resource type="Script" path="res://Scripts/Player/States/Idle.gd" id="4_g6vma"]
+[ext_resource type="Script" path="res://Scripts/Player/States/Chatting.gd" id="5_83kai"]
+[ext_resource type="Script" path="res://Scripts/Player/States/Moving.gd" id="6_cpovl"]
 
-[sub_resource type="CapsuleShape3D" id="1"]
-height = 1.7
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p1bch"]
+height = 1.64427
 
-[sub_resource type="BoxShape3D" id="2"]
+[sub_resource type="LabelSettings" id="LabelSettings_d2mwq"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1")
+script = ExtResource("1_837xu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("1")
-disabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8449, 0)
+shape = SubResource("CapsuleShape3D_p1bch")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01166, 0)
 
-[node name="CollisionShape2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, 0, 0.328001, 0)
-shape = SubResource("2")
+[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -5, 0)
+
+[node name="InteractionDialog" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -395.0
+offset_right = 470.0
+offset_bottom = -325.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="InteractionDialog"]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 174.0
+offset_bottom = 13.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_d2mwq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -300.0
+offset_right = 512.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 35.0
+scale = Vector2(0.25, 0.25)
+color = Color(0, 0, 0, 1)
+
+[node name="Dialogue" parent="." instance=ExtResource("2_o3hlg")]
+visible = false
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("3_48j8p")
+
+[node name="Idle" type="Node" parent="StateManager"]
+script = ExtResource("4_g6vma")
+
+[node name="Chatting" type="Node" parent="StateManager"]
+script = ExtResource("5_83kai")
+
+[node name="Moving" type="Node" parent="StateManager"]
+script = ExtResource("6_cpovl")

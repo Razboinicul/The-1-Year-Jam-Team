@@ -1,25 +1,43 @@
 extends CharacterBody3D
-@export var SPEED = 10
+class_name Player
+
+@onready var label = $InteractionDialog/Label
+@onready var interact_ray = $Camera3D/InteractRay
+@onready var dialog = $Dialogue
+@onready var state_manager = $StateManager
+@onready var camera_3d = $Camera3D
+
+var speed = 3
 var mouse_sens = 0.3
-var camera_anglev=0
+var camera_anglev = 0
+
+func _ready():
+	state_manager.init_state(self)
 
 func _input(event):
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x*mouse_sens))
-		var changev=-event.relative.y*mouse_sens
-		if camera_anglev+changev>-50 and camera_anglev+changev<50:
-			camera_anglev+=changev
-			$Camera3D.rotate_x(deg_to_rad(changev))
-
+	state_manager.input(event)
 
 func _process(delta):
-	var velocity = Vector3.ZERO
-	if Input.is_action_pressed("forward"): velocity -= transform.basis.z * SPEED
-	if Input.is_action_pressed("backward"): velocity += transform.basis.z * SPEED
-	if Input.is_action_pressed("right"): velocity += transform.basis.x * SPEED
-	if Input.is_action_pressed("left"): velocity -= transform.basis.x * SPEED
-	set_velocity(velocity)
-	set_up_direction(Vector3.UP)
-	move_and_slide()
+	state_manager.process(delta)
+	detect_interactable()
+#
+func detect_interactable():
+	label.text = ""
+	label.hide()
+
+	var collider = $Camera3D/InteractRay.get_collider()
+	if collider is Interactable:
+		label.text = collider.interaction_text
+		label.show()
+		if Input.is_action_pressed("Interact"):
+			collider.interact(self)
+
+func open_dialog(character, text):	
+	state_manager.change_state(PlayerState.States.Chatting)
+	dialog.set_character(character)
+	dialog.set_text(text)
+	dialog.open()
+#
+func close_dialog():
+	state_manager.change_state(PlayerState.States.Idle)
 	

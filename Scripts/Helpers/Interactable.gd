@@ -1,4 +1,4 @@
-extends Node
+extends StaticBody3D
 class_name Interactable
 
 signal interacted(player)
