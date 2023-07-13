@@ -1,0 +1,24 @@
+{
+	"laptop_day": [
+		{ 
+			"who": "Laptop",
+			"text": "BEEP...BOOP...Booting...",
+			"confirm": "Wait...",
+			"cancel": "Fuk it!"
+		},
+		{ 
+			"who": "Erin",
+			"text": "Time to work?",
+			"confirm": "Yeah, sure...",
+			"cancel": "I don't feel like it now..."
+		}
+		
+	],
+	"bed_day": [
+		{ 
+			"who": "Erin",
+			"text": "Just a quick nap, maybe?.",
+			"cancel": "Enough sleeping today."
+		}
+	]	
+}
