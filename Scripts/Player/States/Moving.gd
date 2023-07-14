@@ -1,11 +1,18 @@
 extends PlayerState
 
+func enter():
+	super.enter()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func input(event):	
 	super.input(event)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	look_around(event)
+	detect_interactable()
 	
+	if interacted():
+		interact()
+		return PlayerState.States.Chatting
+		
 	return PlayerState.States.Moving
 			
 func process(delta):

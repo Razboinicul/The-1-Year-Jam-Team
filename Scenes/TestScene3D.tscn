@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmc50b6n5qinv"]
 
 [ext_resource type="PackedScene" uid="uid://c4bp184s38tqc" path="res://Scenes/Player.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://sev56hgsouhh" path="res://Scenes/Bedroom.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://sev56hgsouhh" path="res://Scenes/Bedroom/Bedroom.tscn" id="2"]
 
 [sub_resource type="BoxShape3D" id="2"]
 

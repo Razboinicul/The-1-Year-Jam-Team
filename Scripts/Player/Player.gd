@@ -10,6 +10,7 @@ class_name Player
 var speed = 3
 var mouse_sens = 0.3
 var camera_anglev = 0
+var interactable : Interactable
 
 func _ready():
 	state_manager.init_state(self)
@@ -19,25 +20,21 @@ func _input(event):
 
 func _process(delta):
 	state_manager.process(delta)
-	detect_interactable()
-#
-func detect_interactable():
-	label.text = ""
-	label.hide()
+	if interactable: 
+		show_interaction()
+	else:
+		hide_interaction()
 
-	var collider = $Camera3D/InteractRay.get_collider()
-	if collider is Interactable:
-		label.text = collider.interaction_text
-		label.show()
-		if Input.is_action_pressed("Interact"):
-			collider.interact(self)
-
-func open_dialog(character, text):	
-	state_manager.change_state(PlayerState.States.Chatting)
-	dialog.set_character(character)
-	dialog.set_text(text)
-	dialog.open()
+func open_dialog(dialog_key):	
+	dialog.load_dialog(dialog_key)
 #
 func close_dialog():
 	state_manager.change_state(PlayerState.States.Idle)
 	
+func hide_interaction():
+	label.text = ""
+	label.hide()
+	
+func show_interaction():
+	label.text = interactable.interaction_text
+	label.show()
